@@ -1,10 +1,16 @@
 import React from 'react';
 
-const NavBar = () => {
+const NavBar = ({ onReset }) => {
   return (
-    <div>
-      NAV
-    </div>
+    <header>
+      <h2>React Memory Game</h2>
+
+      <nav>
+        <li>
+          <a onClick={onReset}>New Game</a>
+        </li>
+      </nav>
+    </header>
   );
 }
 

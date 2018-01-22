@@ -4,7 +4,31 @@ body {
   font-family: sans-serif;
 }
 
-/*.card-container {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 0 15px;
+}
+
+header li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+header a:hover {
+  opacity: 1;
+}
+
+.card-container {
   display: inline-block;
   margin: 10px;
   height: 150px;
@@ -13,4 +37,21 @@ body {
   background-color: grey;
   border: 6px solid grey;
   border-radius: 25px;
-}*/
+}
+
+@media (max-width: 1000px) {
+  header{
+    padding: 20px 50px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  header{
+    flex-direction: column;
+  }
+
+  header h2{
+    margin-bottom: 15px;
+  }
+}

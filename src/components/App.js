@@ -38,7 +38,7 @@ class App extends Component {
       cards: shuffle(cards)
     };
 
-    this.handleNewGame = this.handleNewGame.bind(this);
+    // this.handleNewGame = this.handleNewGame.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -62,7 +62,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <NavBar onReset={this.handleNewGame} />
+        <NavBar onReset={this.handleNewGame.bind(this)} />
         {renderCards}
       </div>
     );
