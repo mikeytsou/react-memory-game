@@ -3,7 +3,7 @@ import shuffle from 'shuffle-array';
 import NavBar from './NavBar';
 import Card from './Card';
 
-// A card ban be in 1 of 3 CardStates
+// a card ban be in 1 of 3 CardStates
 const CardState = {
   HIDING: 0,
   SHOWING: 1,
@@ -47,9 +47,11 @@ class App extends Component {
       });
     }
 
+    // card that is clicked on
     const foundCard = this.state.cards.find(card => card.id === id);
     console.log('FOUND CARD: ', foundCard);
 
+    // if a card that is SHOWING is clicked, do nothing
     if(this.state.noClick || foundCard.cardState !== CardState.HIDING) {
       return;
     }
@@ -66,6 +68,7 @@ class App extends Component {
     if(showingCards.length === 2 && showingCards[0].backgroundColor === showingCards[1].backgroundColor) {
       cards = mapCardState(cards, ids, CardState.MATCHING);
     }
+    // if 2 cards are showing and do not match, this else if will run
     else if(showingCards.length === 2) {
       let hidingCards = mapCardState(cards, ids, CardState.HIDING);
       console.log('HIDING CARDS: ', hidingCards);
@@ -85,6 +88,7 @@ class App extends Component {
       return;
     }
 
+    // if one 1 cards is showing or 2 cards match, this will run
     this.setState({cards, noClick});
   }
 
@@ -107,7 +111,7 @@ class App extends Component {
   }
 }
 
-// The cards that will be used for our state
+// the cards that will be used for our state
 App.defaultProps = {
   cards: [
     {id: 0, cardState: CardState.HIDING, backgroundColor: 'red'},
