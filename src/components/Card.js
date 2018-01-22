@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Card = ({ key, showing, backgroundColor, onClick}) => {
+const Card = ({ showing, backgroundColor, onClick}) => {
   let styles = {};
 
   if(showing) {
@@ -15,5 +16,11 @@ const Card = ({ key, showing, backgroundColor, onClick}) => {
     />
   );
 }
+
+Card.propTypes = {
+  showing: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default Card;
