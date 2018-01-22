@@ -48,6 +48,7 @@ class App extends Component {
     }
 
     const foundCard = this.state.cards.find(card => card.id === id);
+    console.log('FOUND CARD: ', foundCard);
 
     if(this.state.noClick || foundCard.cardState !== CardState.HIDING) {
       return;
@@ -58,6 +59,7 @@ class App extends Component {
     let cards = mapCardState(this.state.cards, [id], CardState.SHOWING);
 
     const showingCards = cards.filter(card => card.cardState === CardState.SHOWING);
+    console.log('SHOWING CARDS: ', showingCards);
 
     const ids = showingCards.map(card => card.id);
 
@@ -66,6 +68,7 @@ class App extends Component {
     }
     else if(showingCards.length === 2) {
       let hidingCards = mapCardState(cards, ids, CardState.HIDING);
+      console.log('HIDING CARDS: ', hidingCards);
 
       noClick = true;
 
