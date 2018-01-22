@@ -2,7 +2,7 @@
 
 __Getting Setup__
 
-In the terminal, run:
+In the terminal, clone the repo and run:
 
 ```sh
 npm install
